@@ -1,4 +1,5 @@
 import React from "react";
+import Skeleton from "./skeleton";
 
 function PizzaBlock({ title, price, imageUrl, sizes, types }) {
 
