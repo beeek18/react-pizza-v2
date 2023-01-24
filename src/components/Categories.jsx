@@ -1,6 +1,7 @@
 import React from 'react'
 
-function Categories() {
+function Categories({ value }) {
+  // console.log(value)
 
   const [activeIndex, setActiveIndex] = React.useState(0);
 
