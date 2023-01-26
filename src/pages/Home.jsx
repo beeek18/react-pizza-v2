@@ -1,28 +1,28 @@
-import React from 'react'
+import React from "react";
 
 import Categories from "../components/Categories";
 import Sort from "../components/Sort";
 import PizzaBlock from "../components/PizzaBlock";
 import Skeleton from "../components/PizzaBlock/skeleton";
 
-const Home = () => {
-
+const Home = ({ searchValue }) => {
   const [items, setItems] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true)
-  const [categoryId, setCategoryId] = React.useState(0)
+  const [isLoading, setIsLoading] = React.useState(true);
+  const [categoryId, setCategoryId] = React.useState(0);
   const [sortType, setSortType] = React.useState({
-    name: 'популярности',
-    sortProperty: 'rating'
-  })
+    name: "популярности",
+    sortProperty: "rating",
+  });
 
   React.useEffect(() => {
-    setIsLoading(true)
+    setIsLoading(true);
 
-    const sortBy = sortType.sortProperty.replace('-', '')
-    const order = sortType.sortProperty.includes('-') ? 'asc' : 'desc'
-    const category = categoryId > 0 ? `category=${categoryId}` : ''
+    const sortBy = sortType.sortProperty.replace("-", "");
+    const order = sortType.sortProperty.includes("-") ? "asc" : "desc";
+    const category = categoryId > 0 ? `category=${categoryId}` : "";
 
-    fetch(`https://63d0153a10982404378ccc77.mockapi.io/items?${category}&sortBy${sortBy}&order=${order}`,
+    fetch(
+      `https://63d0153a10982404378ccc77.mockapi.io/items?${category}&sortBy${sortBy}&order=${order}`
     )
       .then((res) => res.json())
       .then((arr) => {
@@ -32,22 +32,33 @@ const Home = () => {
     window.scrollTo(0, 0);
   }, [categoryId, sortType]);
 
+  const pizzas = items
+    .filter((obj) => {
+      if (obj.title.toLowerCase().includes(searchValue.toLowerCase())) {
+        return true;
+      }
+
+      return false;
+    })
+    .map((obj) => <PizzaBlock key={obj.id} {...obj} />);
+
+  const skeletons = [...new Array(6)].map((_, index) => (
+    <Skeleton key={index} />
+  ));
+
   return (
-    <div className='container'>
+    <div className="container">
       <div className="content__top">
-        <Categories value={categoryId} onChangeCategory={(i) => setCategoryId(i)} />
+        <Categories
+          value={categoryId}
+          onChangeCategory={(i) => setCategoryId(i)}
+        />
         <Sort value={sortType} onChangeSort={(i) => setSortType(i)} />
       </div>
       <h2 className="content__title">Все пиццы</h2>
-      <div className="content__items">
-        {
-          isLoading
-            ? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
-            : items.map((obj) => (<PizzaBlock key={obj.id} {...obj} />))
-        }
-      </div>
+      <div className="content__items">{isLoading ? skeletons : pizzas}</div>
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;
