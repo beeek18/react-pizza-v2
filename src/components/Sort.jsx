@@ -28,7 +28,6 @@ function Sort() {
     const handleClickOutSide = (event) => {
       if (!event.composedPath().includes(sortRef.current)) {
         setOpen(false);
-        console.log("c");
       }
     };
 
