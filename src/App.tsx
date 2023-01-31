@@ -8,7 +8,7 @@ import NotFound from "./pages/NotFound";
 import "./scss/app.scss";
 import MainLayouts from "./components/layouts/MainLayouts";
 
-function App() {
+const App = () => {
   return (
     <Routes>
       <Route path="/" element={<MainLayouts />} >
