@@ -16,7 +16,7 @@ import Skeleton from "../components/PizzaBlock/skeleton";
 import Pagination from "../components/Pagination";
 import { fetchPizzas, selectPizzaData } from "../redux/slices/pizzaSlice";
 
-const Home:React.FC = () => {
+const Home: React.FC = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const isSearch = React.useRef(false);
@@ -26,11 +26,11 @@ const Home:React.FC = () => {
   const { categoryId, sort, currentPage, searchValue } =
     useSelector(selectFilter);
 
-  const onChangeCategory = (idx:number) => {
+  const onChangeCategory = (idx: number) => {
     dispatch(setCategoryId(idx));
   };
 
-  const onChangePage = (page:number) => {
+  const onChangePage = (page: number) => {
     dispatch(setCurrentPage(page));
   };
 
@@ -96,7 +96,7 @@ const Home:React.FC = () => {
     isSearch.current = false;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  const pizzas = items.map((obj:any) => <PizzaBlock key={obj.id} {...obj} />);
+  const pizzas = items.map((obj: any) => <PizzaBlock key={obj.id} {...obj} />);
 
   const skeletons = [...new Array(6)].map((_, index) => (
     <Skeleton key={index} />

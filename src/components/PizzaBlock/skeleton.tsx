@@ -1,5 +1,5 @@
-import React from "react"
-import ContentLoader from "react-content-loader"
+import React from "react";
+import ContentLoader from "react-content-loader";
 
 const Skeleton: React.FC = () => (
   <ContentLoader
@@ -17,6 +17,6 @@ const Skeleton: React.FC = () => (
     <rect x="0" y="265" rx="10" ry="10" width="255" height="30" />
     <rect x="0" y="312" rx="10" ry="10" width="255" height="70" />
   </ContentLoader>
-)
+);
 
-export default Skeleton
+export default Skeleton;

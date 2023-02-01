@@ -11,14 +11,14 @@ import MainLayouts from "./components/layouts/MainLayouts";
 const App = () => {
   return (
     <Routes>
-      <Route path="/" element={<MainLayouts />} >
+      <Route path="/" element={<MainLayouts />}>
         <Route path="" element={<Home />} />
         <Route path="/cart" element={<Cart />} />
         <Route path="/pizza/:id" element={<FullPizza />} />
         <Route path="*" element={<NotFound />} />
       </Route>
-    </Routes >
+    </Routes>
   );
-}
+};
 
 export default App;
