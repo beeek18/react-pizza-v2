@@ -51,7 +51,7 @@ const Home: React.FC = () => {
 
   // Если изменили параметры и был первый рендер
   React.useEffect(() => {
-    //ї if (isMounted.current) {
+    // if (isMounted.current) {
     //   const params = {
     //     categoryId: categoryId > 0 ? categoryId : null,
     //     sortProperty: sort.sortProperty,
@@ -96,7 +96,7 @@ const Home: React.FC = () => {
   // }, []);
 
   const pizzas = items.map((obj: any) => <PizzaBlock key={obj.id} {...obj} />);
-  const skeletons = [...new Array(6)].map((_, index) => <Skeleton key={index} />);
+  const skeletons = [...new Array(4)].map((_, index) => <Skeleton key={index} />);
 
   return (
     <div className="container">
