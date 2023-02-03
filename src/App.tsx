@@ -5,7 +5,7 @@ import Loadable from 'react-loadable';
 import Home from "./pages/Home";
 
 import "./scss/app.scss";
-import MainLayouts from "./layouts/MainLayouts";
+import MainLayouts from "./layouts/MainLayout";
 
 const Cart = Loadable({
   loader: () => import(/* webpackChunkName: "Cart" */ './pages/Cart'),
