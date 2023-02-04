@@ -1,4 +1,4 @@
-<h1>Интернет-магазин для заказа пиццы - 🍕 React Pizza v2 🍕</h1>
+<h1>Online store for ordering pizza- 🍕 React Pizza v2 🍕</h1>
 
 <h2>🛠 Stack:</h2>
 
