@@ -1,6 +1,8 @@
 <h1>Online store for ordering pizza - 🍕 React Pizza V2 🍕
 
-<h2>🛠 Stack:<h2>
+<h2>🛠 Stack:
+
+<h4>
 
 <li>ReactJS 18
 <li>TypeScript
