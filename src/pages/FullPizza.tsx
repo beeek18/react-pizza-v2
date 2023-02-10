@@ -21,7 +21,7 @@ const FullPizza: React.FC = () => {
         );
         setPizza(data);
       } catch (error) {
-        alert('Ошибка при получении пиццы!');
+        alert('Error to get pizzas!');
         navigate('/');
       }
     }
@@ -30,17 +30,17 @@ const FullPizza: React.FC = () => {
   }, []);
 
   if (!pizza) {
-    return <>Загрузка...</>;
+    return <>Loading...</>;
   }
 
   return (
     <div className="container">
       <img src={pizza.imageUrl} alt="Pizza" />
       <h2>{pizza.title}</h2>
-      <h4>{pizza.price} ₽</h4>
+      <h4>${pizza.price}</h4>
       <Link to="/">
         <button className="button button--outline button--add">
-          <span>Назад</span>
+          <span>Back</span>
         </button>
       </Link>
     </div>

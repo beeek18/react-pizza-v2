@@ -8,10 +8,10 @@ export const NotFoundBlock: React.FC = () => {
       <h1>
         <span>😕</span>
         <br />
-        Ничего не найдено
+        404 - Not Found
       </h1>
       <p className={styles.description}>
-        К сожалени данная страница отсутствует в нашем интернет-магазине
+        Sorry, this page is not available in our online store.
       </p>
     </div>
   );

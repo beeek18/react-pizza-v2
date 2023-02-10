@@ -6,7 +6,7 @@ const initialState: FilterSliceState = {
   categoryId: 0,
   currentPage: 1,
   sort: {
-    name: 'популярности',
+    name: 'popularity',
     sortProperty: SortPropertyEnum.RATING_DESC,
   },
 };
@@ -36,7 +36,7 @@ const filterSlice = createSlice({
         state.currentPage = 1;
         state.categoryId = 0;
         state.sort = {
-          name: 'популярности',
+          name: 'popularity',
           sortProperty: SortPropertyEnum.RATING_DESC,
         };
       }

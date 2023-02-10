@@ -49,7 +49,7 @@ const Home: React.FC = () => {
     window.scrollTo(0, 0);
   };
 
-  // Если изменили параметры и был первый рендер
+  // If the parameters were changed and there was a first render
   React.useEffect(() => {
     // if (isMounted.current) {
     //   const params = {
@@ -78,7 +78,7 @@ const Home: React.FC = () => {
     // isMounted.current = true;
   }, [categoryId, sort.sortProperty, searchValue, currentPage]);
 
-  // Парсим параметры при первом рендере
+  // Parsing parameters on first render
   // React.useEffect(() => {
   //   if (window.location.search) {
   //     const params = qs.parse(window.location.search.substring(1)) as unknown as SearchPizzaParams;
@@ -104,11 +104,11 @@ const Home: React.FC = () => {
         <Categories value={categoryId} onChangeCategory={onChangeCategory} />
         <Sort value={sort} />
       </div>
-      <h2 className="content__title">Все пиццы</h2>
+      <h2 className="content__title">All pizzas</h2>
       {status === 'error' ? (
         <div className="content__error-info">
-          <h2>Произошла ошибка 😕</h2>
-          <p>К сожалению, не удалось получить питсы. Попробуйте повторить попытку позже.</p>
+          <h2>There was an error 😕</h2>
+          <p>Unfortunately, it was not possible to get pits. Please try again later.</p>
         </div>
       ) : (
         <div className="content__items">{status === 'loading' ? skeletons : pizzas}</div>
