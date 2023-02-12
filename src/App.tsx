@@ -34,7 +34,8 @@ const App = () => {
 
         <Route path="*" element={
           <Suspense fallback={<div>Loading...</div>}>
-            <NotFound />
+            <Home />
+            {/* <NotFound /> */}
           </Suspense>} />
       </Route>
     </Routes>
