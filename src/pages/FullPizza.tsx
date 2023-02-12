@@ -16,11 +16,11 @@ const FullPizza: React.FC = () => {
   React.useEffect(() => {
     async function fetchPizza() {
       try {
-        const { data } = await axios.get(
-          "https://63d0153a10982404378ccc77.mockapi.io/items/" + id
-        );
+        const { data } = await axios
+          .get("https://63d0153a10982404378ccc77.mockapi.io/pizzas/" + id);
         setPizza(data);
-      } catch (error) {
+      } catch (err) {
+        console.log(err)
         alert('Error to get pizzas!');
         navigate('/');
       }
