@@ -19,7 +19,7 @@ const App = () => {
   return (
     <Routes>
 
-      <Route path="/" element={<MainLayouts />}>
+      <Route path="" element={<MainLayouts />}>
         <Route path="" element={<Home />} />
 
         <Route path="/cart" element={
