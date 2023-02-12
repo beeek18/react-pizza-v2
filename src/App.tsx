@@ -35,7 +35,7 @@ const App = () => {
         <Route path="*" element={
           <Suspense fallback={<div>Loading...</div>}>
             <Home />
-            {/* <NotFound /> */}
+            {/* <NotFound /> not work in gh-pages */}
           </Suspense>} />
       </Route>
     </Routes>
