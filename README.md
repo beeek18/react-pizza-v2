@@ -1,4 +1,4 @@
-<h1>Online store for ordering pizza - 🍕 React Pizza V2 🍕
+<h1>Online store for ordering pizza - 🍕 Pizza V2 🍕
 
 <h2>🛠 Stack:
 
